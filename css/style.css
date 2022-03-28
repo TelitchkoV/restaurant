@@ -129,7 +129,7 @@ a:hover{
 /* Заголовок секции*/
 @font-face {
   font-family: 'classica_one';
-  src: url('/fonts/classica_one.ttf');
+  src: url('../fonts/classica_one.ttf');
 }
 .section--heading,
 h1, h2
