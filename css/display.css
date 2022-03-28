@@ -1,0 +1,5 @@
+#display-fix{
+  display: block !important;
+  /* opacity: 0%;
+  transition: opacity 0.05s linear; */
+}

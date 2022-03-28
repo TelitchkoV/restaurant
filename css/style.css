@@ -1,0 +1,272 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: black;
+  height: 100%;
+}
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Фикс стандартных заголовков */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* КОНСТАНТЫ */
+:root{
+  /* Основные цвета */
+  /* --color-white: #DFDDDD;
+  --color-gray: #2E2F38;
+  --color-black: #25272E;
+  --color-yellow: #FCC232;
+  --color-orange: #FD7E41; */
+
+  /* Текст */
+  /* --color-text-brighter: #FFFFFE;
+  --color-text-bright: #DFDDDD;
+  --color-text-dark: #A7A9BE;
+  --color-text-darker: #46474A;
+  --color-text-darkest: #25272E; */
+
+  /* Изменить цвет у SVG */
+  /* --svgColor-yellow: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(428%) hue-rotate(1deg) brightness(107%) contrast(98%);
+  --svgColor-dark: invert(66%) sepia(19%) saturate(220%) hue-rotate(197deg) brightness(100%) contrast(90%);
+  --svgColor-bright: invert(99%) sepia(0%) saturate(5461%) hue-rotate(302deg) brightness(116%) contrast(74%);
+  --svgColor-darkest: invert(11%) sepia(22%) saturate(438%) hue-rotate(188deg) brightness(92%) contrast(89%); */
+
+
+  /* Шорткаты для общего оформления */
+  /* --color-background-main: var(--color-gray);
+  --color-foreground-main: var(--color-black); */
+}
+
+
+
+/*----------------- Общее -----------------*/
+
+body{
+  /* Весь стандартный текст */
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-decoration: none;
+  color: #313131;
+  text-align: center;
+
+  /* Помогает прибить footer к низу страницы */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+
+  height: 100%;
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  /* color: var(--color-text-bright); */
+  /* -webkit-transition: color .3s linear;
+  -o-transition: color .3s linear;
+  transition: color .3s linear; */
+}
+a:hover{
+  /* color: var(--color-yellow); */
+  /* text-decoration: underline; */
+}
+.activePage{
+  color: var(--color-yellow) !important;
+  pointer-events: none;
+}
+
+/* Разделение между секциями */
+.section{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Контент секции*/
+.section__wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+
+  width: 100%;
+}
+
+/* Заголовок секции*/
+@font-face {
+  font-family: 'classica_one';
+  src: url('/fonts/classica_one.ttf');
+}
+.section--heading,
+h1, h2
+{
+  padding-bottom: 40px;
+  color: #7f390a;
+
+  font-family: 'classica_one';
+  font-size: 40px;
+  line-height: 1;
+
+  font-weight: bold;
+  text-align: center;
+
+  width: 100%;
+}
+
+.section--heading::after,
+h1::after,
+h2::after,
+.section--heading::before,
+h1::before,
+h2::before
+{
+  content: "";
+  display: inline-block;
+  width: 10%;
+  height: 1px;
+  margin: 10px 15px;
+  background: #7f390a;
+}
+
+/* Хранитель контента секции*/
+.container {
+  min-height: 90px;
+  position: relative;
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Отступ между секциями вверх */
+.indent-top{
+  margin-top: 40px;
+}
+/* Отступ между секциями вниз */
+.indent-bottom{
+  margin-bottom: 40px;
+}
+
+main{
+  -webkit-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+/* Фикс для хедера */
+main > *:first-child{
+  padding-top: 100px;
+  background-color: var(--color-background-main);
+}
+
+
+
+.inactive.yes,
+.inactive.yes *{
+  pointer-events: none !important;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+.inactive.yes{
+  pointer-events: auto !important;
+  opacity: 10%;
+}
+
+
+
+
+@media (max-width: 1130px) {
+  /* .container{
+    width: 100%;
+  } */
+  .container{
+    width: 980px;
+  }
+}
+@media (max-width: 1024px){
+  .container{
+    width: 748px;
+  }
+}
+@media (max-width: 768px){
+  main > *:first-child{
+    padding-top: 50px;
+  }
+  .container{
+    width: 560px;
+  }
+}
+@media (max-width: 580px){
+  .container{
+    width: 100%;
+  }
+  .section--heading{
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 425px){
+  .container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .section--heading{
+    font-size: 24px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 375px){
+}
+@media (max-width: 320px) {
+  /* .section--heading{
+    font-size: 24px;
+  } */
+}
