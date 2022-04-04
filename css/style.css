@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /* КОНСТАНТЫ */
-:root{
+/* :root{ */
   /* Основные цвета */
   /* --color-white: #DFDDDD;
   --color-gray: #2E2F38;
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   /* Шорткаты для общего оформления */
   /* --color-background-main: var(--color-gray);
   --color-foreground-main: var(--color-black); */
-}
+/* } */
 
 
 
@@ -90,14 +90,14 @@ a{
   -o-transition: color .3s linear;
   transition: color .3s linear; */
 }
-a:hover{
-  /* color: var(--color-yellow); */
-  /* text-decoration: underline; */
-}
-.activePage{
+/* a:hover{
+  color: var(--color-yellow);
+  text-decoration: underline;
+} */
+/* .activePage{
   color: var(--color-yellow) !important;
   pointer-events: none;
-}
+} */
 
 /* Разделение между секциями */
 .section{
@@ -182,16 +182,16 @@ h2::before
   margin-bottom: 40px;
 }
 
-main{
+/* main{
   -webkit-transition: opacity 0.3s linear;
   -o-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
-}
+} */
 /* Фикс для хедера */
-main > *:first-child{
+/* main > *:first-child{
   padding-top: 100px;
   background-color: var(--color-background-main);
-}
+} */
 
 
 
@@ -235,9 +235,9 @@ main > *:first-child{
   }
 }
 @media (max-width: 768px){
-  main > *:first-child{
+  /* main > *:first-child{
     padding-top: 50px;
-  }
+  } */
   .container{
     width: 560px;
   }

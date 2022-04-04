@@ -1,11 +1,12 @@
 .index__banner{
-  background: -o-linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../img/banner.jpg);
-  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)) ), url(../img/banner.jpg);
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../img/banner.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url(../img/banner.jpg);
   background-color: #cccccc;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.index__banner > .container{
+  padding-top: 70px;
 }
 
 .index__banner .name{

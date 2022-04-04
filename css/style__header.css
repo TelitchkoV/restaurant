@@ -1,0 +1,78 @@
+header{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgba(0, 0, 0, 0);
+  /* transition: background-color .1s linear; */
+}
+header > div{
+  height: 100%;
+  /* flex-wrap: nowrap !important; */
+}
+
+.header__name{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+
+  margin-right: 20px;
+
+  padding-bottom: 10px;
+}
+
+.header__list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 370px;
+}
+
+.header__list > a{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+
+  padding: 5px 10px;
+  border-top: #ffffff00 3px solid;
+  border-bottom: #ffffff00 3px solid;
+
+  /* Не переносить */
+  white-space: nowrap;
+}
+.header__list > a:hover{
+  color: #f9a400;
+  /* text-decoration: underline; */
+
+  border-bottom: #f9a400 3px solid;
+}
+
+.activePage{
+  border-bottom: #f9a400 3px solid !important;
+  padding: 10px;
+}
+
+/* .header__list > a:nth-child(1)::after{
+  content: "";
+  width: 80px;
+  height: 3px;
+  display: block;
+  position: absolute;
+
+  background: #f9a400;
+
+  margin-top: 10px;
+
+} */
