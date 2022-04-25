@@ -59,10 +59,129 @@
         <div class="container">
           <p class="name">Добро пожаловать</p>
           <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus necessitatibus commodi doloremque. Exercitationem, cumque facere unde ad doloremque illo. Ducimus tempore dolorem voluptas velit exercitationem ipsa voluptate culpa impedit consequuntur.</p>
-          <button class="btnOrder" type="button" name="button1">
+          <button class="btnOrder _modal-open" data-modal-open="modal-1">
             <img src="img/invoice-bill-svgrepo-com.svg" alt="">
             <p>Забронировать столик</p>
           </button>
+          <div class="_modal" data-modal="modal-1">
+            <div class="modal-bg">
+              <div class="modal-body">
+                <div class="modal-content modal-callback" style="padding: 20px;">
+                  <div>
+                    <img class="img" src="img/map.png" alt="">
+                    <div class="radiostol">
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="1" class="stol_input" id="stol_1">
+                            <label class="stol" for="stol_1">1 стол</br>1-4 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="2" class="stol_input" id="stol_2">
+                            <label class="stol" for="stol_2">2 стол</br>1-4 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="3" class="stol_input" id="stol_3">
+                            <label class="stol" for="stol_3">3 стол</br>2-6 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="4" class="stol_input" id="stol_4">
+                            <label class="stol" for="stol_4">4 стол</br>2-6 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="5" class="stol_input" id="stol_5">
+                            <label class="stol" for="stol_5">5 стол</br>1-4 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="6" class="stol_input" id="stol_6">
+                            <label class="stol" for="stol_6">6 стол</br>2-8 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="7" class="stol_input" id="stol_7">
+                            <label class="stol" for="stol_7">7 стол</br>2-8 чл</label>
+                        </div>
+                        <div class="tableMap">
+                            <input type="radio" name="stol" value="8" class="stol_input" id="stol_8">
+                            <label class="stol" for="stol_8">8 стол</br>2-8 чл</label>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="seredina">
+                        <div class="datebronH">
+                            <label for="date">Дата брони</label>
+                            </br>
+                            <input type="date" name="date" class="datebron" id="date">
+                        </div>
+                        <div class="kolvochel">
+                            <label for="">Кол-во человек</label>
+                            </br>
+                            <div class="number">
+                                <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+                                <input type="number" min="0" value="1" readonly>
+                                <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="radiotime">
+                        <div class="">
+                            <input type="radio" name="time" value="14:00" class="time_input" id="time_14">
+                            <label class="time" for="time_14">14:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="14:30" class="time_input" id="time_14_3">
+                            <label class="time" for="time_14_3">14:30</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="15:00" class="time_input" id="time_15">
+                            <label class="time" for="time_15">15:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="15:30" class="time_input" id="time_15_3">
+                            <label class="time" for="time_15_3">15:30</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="16:00" class="time_input" id="time_16">
+                            <label class="time" for="time_16">16:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="16:30" class="time_input" id="time_16_3">
+                            <label class="time" for="time_16_3">16:30</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="17:00" class="time_input" id="time_17">
+                            <label class="time" for="time_17">17:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="17:30" class="time_input" id="time_17_3">
+                            <label class="time" for="time_17_3">17:30</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="18:00" class="time_input" id="time_18">
+                            <label class="time" for="time_18">18:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="18:30" class="time_input" id="time_18_3">
+                            <label class="time" for="time_18_3">18:30</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="19:00" class="time_input" id="time_19">
+                            <label class="time" for="time_19">19:00</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="time" value="19:30" class="time_input" id="time_19_3">
+                            <label class="time" for="time_19_3">19:30</label>
+                        </div>
+                  </div>
+                  <div>
+                    <textarea class="auth__value--comment" type="comment" cols="30" rows="3" placeholder="Пожелания к Бронированию"></textarea>
+                  </div>
+                  <label for="">Нажимая кнопку "Продолжить" вы принимаете условия пользовательского соглашения и политики конфиденциальности</label>
+                  <div>
+                    <input class="auth__btn auth__btn--book" type="submit" value="Продолжить">
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
         </div>
       </section>
 
