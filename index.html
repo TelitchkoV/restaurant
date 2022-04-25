@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/style__footer.css">
   <link rel="stylesheet" href="css/style__index.css">
   <!-- Скрипты -->
+  <script src="https://unpkg.com/imask" defer></script>
   <script type="text/javascript" defer src="js/script.js"></script>
 
   <!-- Теги -->
@@ -175,9 +176,37 @@
                     <textarea class="auth__value--comment" type="comment" cols="30" rows="3" placeholder="Пожелания к Бронированию"></textarea>
                   </div>
                   <label for="">Нажимая кнопку "Продолжить" вы принимаете условия пользовательского соглашения и политики конфиденциальности</label>
+
                   <div>
-                    <input class="auth__btn auth__btn--book" type="submit" value="Продолжить">
+                    <button class="modal__btn2 _modal-open2" data-modal-open="modal-2">
+                      Продолжить
+                    </button>
                   </div>
+
+
+                  <div class="_modal2" data-modal="modal-2">
+                    <div class="modal-bg2">
+                      <div class="modal-body2">
+                        <div class="modal-content2 modal-callback2">
+                                    <form class="auth2" action="">
+                                        <div>
+                                            <input class="auth__value2" type="text" required placeholder="ФИО">
+                                        </div>
+                                        <div>
+                                            <input class="auth__value2" id="tel" type="tel" required placeholder="Номер телефона">
+                                        </div>
+                                        <div >
+                                            <input class="auth__value--email2" type="email" name="email" id="email" placeholder="Email">
+                                          </div>
+                                        <div>
+                                            <input class="auth__btn2 auth__btn--book2" type="submit" value="Забронировать">
+                                        </div>
+                                    </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
             </div>
             </div>
