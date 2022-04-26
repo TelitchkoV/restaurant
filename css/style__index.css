@@ -437,14 +437,15 @@ input[type="radio"] {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(6, 0fr);
+  width: 100%;
+  grid-gap: 30px 0px;
   margin-top: 50px;
-  justify-items: center;
+  justify-content: space-between;
 }
 
 .time {
-  background: lightsalmon;
+  background: #f9a400;
   color: white;
   font-size: 16px;
   padding: 8px;
@@ -453,16 +454,16 @@ input[type="radio"] {
 }
 
 .time:hover {
-  background: green;
+  background: #ffb829;
 }
 
 .time_input:checked+.time {
-  background: green;
+  background: #c4552d;
 }
 
 .stol {
   display: inline-block;
-  background: lightsalmon;
+  background: #f9a400;
   color: white;
   font-size: 16px;
   width: 70px;
@@ -480,17 +481,19 @@ input[type="radio"] {
 }
 
 .stol:hover {
-  background: green;
+  background: #ffb829;
 }
 
 .stol_input:checked+.stol {
-  background: green;
+  background: #c4552d;
 }
 
 .number {
   display: inline-block;
   position: relative;
   width: 110px;
+
+  border: 1px solid #dddddd;
 }
 
 .number input[type="number"] {
@@ -513,10 +516,10 @@ input[type="radio"] {
   display: none;
 }
 
-.number-minus {
+.number-minus,
+.number-plus{
   position: absolute;
   top: 1px;
-  left: 1px;
   bottom: 1px;
   width: 20px;
   padding: 0;
@@ -525,20 +528,21 @@ input[type="radio"] {
   border: none;
   font-size: 16px;
   font-weight: 600;
+  background: rgb(209, 209, 209);
 }
-
+.number-minus {
+  left: 1px;
+}
 .number-plus {
-  position: absolute;
-  top: 1px;
   right: 1px;
-  bottom: 1px;
-  width: 20px;
-  padding: 0;
-  display: block;
-  text-align: center;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
+}
+.number-minus:hover,
+.number-plus:hover{
+  background: rgb(223, 223, 223);
+}
+.number-minus:active,
+.number-plus:active{
+  background: rgb(173, 173, 173);
 }
 
 .radiostol {
@@ -547,32 +551,37 @@ input[type="radio"] {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(4, 0fr);
+  grid-gap: 15px 0px;
+  justify-content: space-between;
 }
 
 .datebron {
-  height: 27px;
+  height: 32px;
   font-size: 16px;
+
+  border: 1px solid #dddddd;
 }
 
 .seredina {
-  display: -ms-grid;
-  display: grid;
-  /* -ms-grid-columns: (1fr)[2]; */
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .datebronH {
-  -ms-grid-column-align: start;
-      justify-self: start;
+  text-align: left;
+}
+.datebronH input{
+  margin-top: 10px;
 }
 
 .kolvochel {
-  -ms-grid-column-align: end;
-      justify-self: end;
+  text-align: right;
+}
+.kolvochel .number{
+  margin-top: 10px;
 }
 
 ._modal {
@@ -605,6 +614,7 @@ input[type="radio"] {
 
 .modal-body {
   background-color: #fff;
+
   width: 550px;
   height: 80%;
 
@@ -613,17 +623,8 @@ input[type="radio"] {
   overflow: auto;
   position: relative;
   max-width: 100%;
-}
 
-.modal__btn {
-  background: #c4552d;
-  color: white;
-  font-size: 16px;
-  border: none;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-size: 16px;
-  min-width: 100px;
+  padding: 30px;
 }
 
 .auth__btn {
@@ -638,9 +639,9 @@ input[type="radio"] {
   margin-top: 80px;
 }
 
-.auth__btn--book:hover {
+/* .auth__btn--book:hover {
   background: #fc3;
-}
+} */
 
 .auth__value--comment {
   width: 100%;
@@ -649,16 +650,16 @@ input[type="radio"] {
   min-height: 50px;
   font-size: 18px;
   padding: 8px 4.8px 8px;
-  border: solid 1px rgb(180, 180, 180);
+  border: 1px solid #dddddd;
   margin-top: 20px;
 
   margin-top: 40px;
   margin-bottom: 30px;
 }
 
-.auth__value--comment:hover {
+/* .auth__value--comment:hover {
   background: #fc3;
-}
+} */
 
 .img {
 height: auto;
@@ -719,7 +720,9 @@ width: auto;
   font-size: 16px;
   min-width: 100px;
 }
-
+.modal__btn2:hover {
+  background: #572605;
+}
 
 
 .auth__btn--book2 {
@@ -730,21 +733,22 @@ width: auto;
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
 input {
   border: none;
   font-size: 16px;
 
 }
-input:hover {
+/* input:hover {
   background: #fc3;
-}
+} */
 .auth2 {
   max-width: 100%;
   background-color: #fef9f5;
-  padding: 20px;
+  padding: 40px 30px;
 }
 .auth2 div {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 .auth2 div:first-child {
   padding-top: 0;
@@ -752,20 +756,20 @@ input:hover {
 .auth__value2 {
   width: 100%;
   padding: 8px 4.8px 8px;
-  border: none;
+  border: 1px solid #dddddd;
 }
 
-.auth__value2:valid {
+/* .auth__value2:valid {
   width: 100%;
   background: #fc3;
-  border: none;
-}
-.auth__value2:invalid {
+  border: 1px solid #dddddd;
+} */
+/* .auth__value2:invalid {
   width: 100%;
-  border: none;
-}
+  border: 1px solid #dddddd;
+} */
 .auth__value--email2{
-  border: none;
+  border: 1px solid #dddddd;
   padding: 8px 4.8px 8px;
   font-size: 16px;
   width: 100%;
@@ -782,5 +786,5 @@ input:hover {
   width: 100%;
 }
 .auth__btn--book2:hover {
-  background: #fc3;
+  background: #572605;
 }
