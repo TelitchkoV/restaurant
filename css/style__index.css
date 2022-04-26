@@ -723,12 +723,12 @@ width: auto;
 .modal__btn2{
   background: #c4552d;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 8px 20px;
-  font-size: 16px;
+  padding: 10px 0px;
+  width: 100%;
   min-width: 100px;
 }
 .modal__btn2:hover {
@@ -791,9 +791,9 @@ input {
   -o-transition: all;
   transition: all;
   border: none;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
   width: 100%;
 }
 .auth__btn--book2:hover {
