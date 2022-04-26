@@ -447,7 +447,6 @@ input[type="radio"] {
   background: lightsalmon;
   color: white;
   font-size: 16px;
-  border-radius: 10px;
   padding: 8px;
   padding-bottom: 8px;
   height: 15px;
@@ -612,7 +611,6 @@ input[type="radio"] {
   margin: auto;
 
   overflow: auto;
-  border-radius: 16px;
   position: relative;
   max-width: 100%;
 }
@@ -708,7 +706,6 @@ width: auto;
   width: 500px;
   margin: auto;
   overflow: auto;
-  border-radius: 16px;
   position: relative;
 }
 .modal__btn2{
