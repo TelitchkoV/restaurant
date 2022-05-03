@@ -241,6 +241,11 @@ h2::before
   .container{
     width: 560px;
   }
+
+  .section{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 @media (max-width: 580px){
   .container{
@@ -268,4 +273,9 @@ h2::before
   /* .section--heading{
     font-size: 24px;
   } */
+
+  .section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }

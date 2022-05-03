@@ -98,3 +98,43 @@ header > div{
   margin-top: 10px;
 
 } */
+
+
+
+
+@media (max-width: 580px){
+  header > div{
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+
+  .header__name{
+    margin: auto;
+    padding-top: 10px;
+  }
+}
+@media (max-width: 425px){
+  .header__list > a{
+    font-size: 18px;
+  }
+
+  .section--heading,
+  h1, h2{
+    font-size: 35px;
+  }
+}
+@media (max-width: 320px){
+  .header__list > a{
+    font-size: 16px;
+  }
+
+  .section--heading,
+  h1, h2{
+    font-size: 30px;
+  }
+}
