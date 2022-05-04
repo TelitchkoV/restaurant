@@ -266,6 +266,16 @@ h2::before
     margin-left: auto;
     margin-right: auto;
   }
+
+  .section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section--heading,
+  h1, h2{
+    font-size: 30px;
+  }
 }
 @media (max-width: 375px){
 }
@@ -277,5 +287,11 @@ h2::before
   .section{
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+
+  .section--heading,
+  h1, h2{
+    font-size: 20px !important;
+    padding-bottom: 20px;
   }
 }

@@ -119,22 +119,37 @@ header > div{
   }
 }
 @media (max-width: 425px){
+  header{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  header > div{
+    min-height: -webkit-fit-content !important;
+    min-height: -moz-fit-content !important;
+    min-height: fit-content !important;
+  }
   .header__list > a{
     font-size: 18px;
-  }
-
-  .section--heading,
-  h1, h2{
-    font-size: 35px;
   }
 }
 @media (max-width: 320px){
   .header__list > a{
     font-size: 16px;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    width: 25%;
   }
 
   .section--heading,
   h1, h2{
     font-size: 30px;
+  }
+
+  .header__name{
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }

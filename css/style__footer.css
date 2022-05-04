@@ -133,6 +133,11 @@ footer{
 
 
 
+@media (max-width: 1024px){
+  /* .footer_container > div:nth-child(3){
+    width: 100%;
+  } */
+}
 @media (max-width: 768px){
   .footer_container{
     width: 100%;
@@ -151,11 +156,6 @@ footer{
   }
 }
 @media (max-width: 425px){
-  .footer_container > div:nth-child(2){
-    margin-right: 20px;
-  }
-}
-@media (max-width: 320px){
   .footer_container > div:nth-child(2){
     margin-right: 0px;
     padding-bottom: 0px;
