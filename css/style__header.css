@@ -28,6 +28,8 @@ header{
 }
 header > div{
   height: 100%;
+  -ms-flex-wrap: nowrap !important;
+      flex-wrap: nowrap !important;
   /* flex-wrap: nowrap !important; */
 }
 
@@ -102,6 +104,11 @@ header > div{
 
 
 
+@media (max-width: 768px){
+  .header__name{
+    margin-right: 80px;
+  }
+}
 @media (max-width: 580px){
   header > div{
     -webkit-box-orient: vertical !important;
