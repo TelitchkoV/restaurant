@@ -64,31 +64,39 @@ header > div{
   max-width: 370px;
 }
 
-.header__list > a{
+.header__list > .header__pageTab{
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
 
-  padding: 5px 10px;
+  padding: 10px 10px;
+
+  border: none;
   border-top: #ffffff00 3px solid;
   border-bottom: #ffffff00 3px solid;
 
   /* Не переносить */
   white-space: nowrap;
+
+  -webkit-transition: border-bottom .1s linear;
+
+  -o-transition: border-bottom .1s linear;
+
+  transition: border-bottom .1s linear;
 }
-.header__list > a:hover{
+.header__list > .header__pageTab:hover{
   color: #f9a400;
   /* text-decoration: underline; */
 
-  border-bottom: #f9a400 3px solid;
+  /* border-bottom: #f9a400 3px solid; */
 }
 
-.activePage{
+.header__list >  .header__pageTab.active{
   border-bottom: #f9a400 3px solid !important;
-  padding: 10px;
 }
 
-/* .header__list > a:nth-child(1)::after{
+/* .header__list > .header__pageTab:nth-child(1)::after{
   content: "";
   width: 80px;
   height: 3px;
@@ -136,12 +144,12 @@ header > div{
     min-height: -moz-fit-content !important;
     min-height: fit-content !important;
   }
-  .header__list > a{
+  .header__list > .header__pageTab{
     font-size: 18px;
   }
 }
 @media (max-width: 320px){
-  .header__list > a{
+  .header__list > .header__pageTab{
     font-size: 16px;
 
     padding-left: 0;

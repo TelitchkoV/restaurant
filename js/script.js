@@ -1,4 +1,4 @@
-// Затемнение хедера при скролле вниз
+// Скролл окна
 var headerM = document.getElementById("headerM");
 ScrollCheck();
 
@@ -6,11 +6,14 @@ ScrollCheck();
 
 function ScrollCheck(){
   Header__Style(window.scrollY);
+  Header__Tabs(window.scrollY);
 
   window.addEventListener("scroll", (event) => {
     Header__Style(this.scrollY);
+    Header__Tabs(this.scrollY);
   });
 }
+// Затемнение хедера при скролле вниз
 function Header__Style(scroll){
   if (scroll > 0) {
     // Скорость затемнения хедера
@@ -21,6 +24,73 @@ function Header__Style(scroll){
   }
   else headerM.style.backgroundColor = "rgba(0, 0, 0, 0)";
 }
+// Вкладки хедера при скролле вниз
+function Header__Tabs(scroll){
+  var anchor1 = document.getElementById("anchor1").getBoundingClientRect();
+  var anchor2 = document.getElementById("anchor2").getBoundingClientRect();
+  var anchor3 = document.querySelector('footer').getBoundingClientRect();
+  var tabsList = document.getElementsByClassName("header__pageTab");
+  var headerHeight = document.querySelector('header').getBoundingClientRect().height;
+
+  function Header__TabsUpdate(target){
+    for (let index = 0; index < tabsList.length; index++) {
+      tabsList[index].classList = "header__pageTab";
+    }
+    tabsList[target].classList = "header__pageTab active";
+  }
+
+  // DEBUG
+  // console.log(window.innerHeight);
+  // console.log(window.pageYOffset);
+  // console.log(scroll);
+  // console.log(anchor3.bottom + scroll - window.innerHeight);
+  // console.log("--------------");
+
+  if (scroll > anchor3.bottom + scroll - window.innerHeight - headerHeight) {
+    Header__TabsUpdate(3);
+  }
+  else if (scroll >= anchor2.top + scroll - headerHeight - 1) {
+    Header__TabsUpdate(2);
+  }
+  else if (scroll >= anchor1.top + scroll - headerHeight - 1) {
+    Header__TabsUpdate(1);
+  }
+  else if (scroll < anchor1.top + scroll - headerHeight - 1) {
+    Header__TabsUpdate(0);
+  }
+}
+
+
+// Вкладки хедера
+Header__TabsBtns();
+function Header__TabsBtns(){
+  var btnTab1 = document.getElementById("BtnTab1");
+  var btnTab2 = document.getElementById("BtnTab2");
+  var btnTab3 = document.getElementById("BtnTab3");
+  var btnTab4 = document.getElementById("BtnTab4");
+
+  btnTab1.addEventListener('click', (event) => {
+    document.querySelector("main").scrollIntoView({behavior: "smooth"});
+  })
+  btnTab2.addEventListener('click', (event) => {
+    window.scrollTo({
+      top: document.getElementById("anchor1").getBoundingClientRect().top + window.scrollY - document.querySelector('header').getBoundingClientRect().height,
+      left: 0,
+      behavior: 'smooth'
+    });
+  })
+  btnTab3.addEventListener('click', (event) => {
+    window.scrollTo({
+      top: document.getElementById("anchor2").getBoundingClientRect().top + window.scrollY - document.querySelector('header').getBoundingClientRect().height,
+      left: 0,
+      behavior: 'smooth'
+    });
+  })
+  btnTab4.addEventListener('click', (event) => {
+    document.querySelector('footer').scrollIntoView({behavior: "smooth"});
+  })
+}
+
 
 
 
