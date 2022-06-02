@@ -563,7 +563,7 @@ input[type="radio"] {
   border: 1px solid #dddddd;
 }
 
-.seredina {
+/* .seredina {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -576,6 +576,12 @@ input[type="radio"] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+} */
+
+.middate{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .datebronH {
@@ -597,7 +603,7 @@ input[type="radio"] {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   visibility: hidden;
   opacity: 0;
 }
@@ -606,9 +612,12 @@ input[type="radio"] {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 100px;
 }
 
-.modal-bg {
+/* .modal-bg {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -617,14 +626,12 @@ input[type="radio"] {
   display: flex;
 
   padding-top: 100px;
-}
+} */
 
 .modal-body {
   background-color: #fff;
 
   width: 550px;
-  height: 80%;
-
   margin: auto;
 
   overflow: auto;
@@ -669,9 +676,9 @@ input[type="radio"] {
 } */
 
 .img {
-height: auto;
-max-width: 100%;
-width: auto;
+  height: auto;
+  max-width: 100%;
+  width: auto;
 }
 
 
@@ -688,7 +695,7 @@ width: auto;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 200;
   visibility: hidden;
   opacity: 0;
 }
@@ -697,9 +704,12 @@ width: auto;
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 200px;
 }
 
-.modal-bg2 {
+/* .modal-bg2 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -707,11 +717,11 @@ width: auto;
   display: -ms-flexbox;
   display: flex;
   padding: 20px;
-}
+} */
 
 .modal-body2 {
   background-color: #fff;
-  width: 500px;
+  max-width: 500px;
   margin: auto;
   overflow: auto;
   position: relative;
@@ -751,7 +761,7 @@ input {
 } */
 .auth2 {
   max-width: 100%;
-  background-color: #fef9f5;
+
   padding: 40px 30px;
 }
 .auth2 div {
@@ -821,6 +831,24 @@ input {
     width: 100%;
   }
 
+  .radiostol{
+    grid-template-columns: repeat(2, 0fr);
+  }
+  .radiotime{
+    grid-template-columns: repeat(3, 0fr);
+  }
+
+  .middate{
+    flex-wrap: wrap;
+  }
+  .datebronH{
+    width: 100%;
+  }
+  .kolvochel{
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+  }
 
   .index__specialDishes__list,
   .index__services__list{
