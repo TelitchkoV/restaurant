@@ -198,3 +198,161 @@ window.addEventListener('keydown', e => {
 		}
 	})
 })
+
+
+
+
+
+// карта
+
+// // Изменение цвета когда мышка над названием магазина.
+// $('.scheme-item').hover(
+//   function() {
+//       $('.scheme rect[id=' + $(this).data('id') + ']').attr('class', 'hover');
+//   },
+//   function() {
+//       $('.scheme rect[id=' + $(this).data('id') + ']').attr('class', 'defaultStol');
+//   }
+// );
+
+// Клик по названию ресторана - открывается подсказка.
+// $('.scheme-item').on('click', function() {
+//   $('.scheme-popup').hide();
+//   // $('.scheme rect[id=' + $(this).data('id') + ']').attr('class', 'active');
+
+//   var popup = $(this).find('.scheme-popup');
+//   $(popup).css('top', '-' + ($(popup).outerHeight(true) + 10) + 'px');
+//   $(popup).css('left', '-' + (($(popup).outerWidth(true) / 4) - ($(this).outerWidth(true) / 2)) + 'px');
+//   // $('.scheme rect[id=' + $(this).data('id') + ']').attr('class', 'active');
+//   $(popup).show();
+// });
+
+// Клик по полигону ресторана - также открывается подсказка.
+// $('.scheme rect').click(function() {
+//   $('.scheme-popup').hide();
+//   $('.scheme-item[id=' + $(this).data('id') + ']').trigger('click');
+// });
+
+// Клик вне карты всё закрывает.
+// $("body").click(function(e) {
+//   if ($(e.target).closest(".scheme rect, .scheme-item").length == 0) {
+//       $(".scheme-popup").hide();
+//       // $('.scheme rect').attr('class', 'defaultStol');
+//   }
+// });
+
+
+
+
+
+
+
+
+var tables = document.querySelectorAll('.defaultStol');
+var popups = document.querySelectorAll(".scheme-popup");
+var selectedTable = 0;
+
+createTableMenu();
+
+
+
+function createTableMenu(){
+  for (let i = 0; i < tables.length; i++) {
+
+    // Добавить номер стола
+    var tableNumber = document.createElement("p");
+    tableNumber.innerText = tables[i].id.replace("stol", "");
+    tableNumber.classList = "scheme-tableNumber";
+    tableNumber.id = "tableNumber" + tables[i].id.replace("stol", "");
+
+    document.querySelector(".scheme").appendChild(tableNumber);
+    // Вставить номер стола
+    var tempRect = tables[i].getBoundingClientRect();
+    // Положение модального окна относительно основного
+    var ModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
+
+    tableNumber.style.top = tempRect.top + document.getElementById("modalMain").scrollTop
+    - ModalOffset.top - tableNumber.getBoundingClientRect().height
+    +'px';
+    tableNumber.style.left = tempRect.left + document.getElementById("modalMain").scrollLeft
+    - ModalOffset.left + (tempRect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
+    +'px';
+
+    // Показать инфо при ховере
+    tables[i].addEventListener('mouseover', (e) => {
+      var tempID = tables[i].id.replace("stol", "");
+      var tempPopup = document.getElementById('popup' + tempID);
+      // Положение внутри модального окна
+      tempPopup.style.display = "block";
+      // Положение модального окна относительно основного
+      var tempModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
+
+      var rect = tables[i].getBoundingClientRect();
+
+      tempPopup.style.top = rect.top + document.getElementById("modalMain").scrollTop
+        + (rect.height) + 5
+        - tempModalOffset.top
+      +'px';
+      tempPopup.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+        + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
+        - tempModalOffset.left
+      +'px';
+    });
+
+    // Убрать инфо при ховере
+    tables[i].addEventListener('mouseout', (e) => {
+      var tempID = tables[i].id.replace("stol", "");
+      var tempPopup = document.getElementById('popup' + tempID);
+
+      if (!tables[i].classList.contains("active")) {
+        tempPopup.style.display = "none";
+      }
+    });
+
+    // Показать инфо при клике
+    // Сохранить выбранный стол в переменную
+    tables[i].addEventListener('click', (e) => {
+      var tempID = tables[selectedTable].id.replace("stol", "");
+      var tempPopupOld = document.getElementById('popup' + tempID);
+      tempPopupOld.style.display = "none";
+      tables[selectedTable].classList = "defaultStol";
+
+      tables[i].classList.add('active');
+      selectedTable = i;
+    });
+  }
+
+  for (let j = 0; j < popups.length; j++) {
+    popups[j].addEventListener('click', (e) => {
+      popups[j].style.display = "none";
+    });
+  }
+
+  // Реакция на смену размера окна
+  window.addEventListener('resize', (e) => {
+    var tempModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
+
+    for (let i = 0; i < tables.length; i++){
+      var rect = tables[i].getBoundingClientRect();
+      var tempID = tables[i].id.replace("stol", "");
+      var tableNumber = document.getElementById("tableNumber" + tempID);
+      var tempPopup = document.getElementById('popup' + tempID);
+
+      tempPopup.style.top = rect.top + document.getElementById("modalMain").scrollTop
+      + (rect.height) + 5
+      - tempModalOffset.top
+      +'px';
+      tempPopup.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+      + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
+      - tempModalOffset.left
+      +'px';
+
+      tableNumber.style.top = rect.top + document.getElementById("modalMain").scrollTop
+      - tempModalOffset.top - tableNumber.getBoundingClientRect().height
+      +'px';
+      tableNumber.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+      - tempModalOffset.left + (rect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
+      +'px';
+    }
+  });
+}

@@ -449,6 +449,8 @@ input[type="radio"] {
   padding: 8px;
   padding-bottom: 8px;
   height: 15px;
+
+  cursor: pointer;
 }
 
 .time:hover {
@@ -543,24 +545,16 @@ input[type="radio"] {
   background: rgb(173, 173, 173);
 }
 
-.radiostol {
-  padding-bottom: 50px;
-  padding-top: 50px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(4, 0fr);
-  grid-gap: 15px 0px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
 
 .datebron {
   height: 32px;
   font-size: 16px;
 
   border: 1px solid #dddddd;
+
+  padding-left: 5px;
+
+  cursor: text;
 }
 
 /* .seredina {
@@ -611,15 +605,22 @@ input[type="radio"] {
   z-index: 100;
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
+}
+._modal *{
+  pointer-events: none;
 }
 
 ._modal._active {
   opacity: 1;
   visibility: visible;
-  pointer-events: all;
+  pointer-events: auto;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
   padding-top: 100px;
+}
+._modal._active * {
+  pointer-events: auto;
 }
 
 /* .modal-bg {
@@ -703,15 +704,22 @@ input[type="radio"] {
   z-index: 200;
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
+}
+._modal2 *{
+  pointer-events: none;
 }
 
 ._modal2._active {
   opacity: 1;
   visibility: visible;
-  pointer-events: all;
+  pointer-events: auto;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
   padding-top: 200px;
+}
+._modal2._active * {
+  pointer-events: auto;
 }
 
 /* .modal-bg2 {
@@ -741,6 +749,8 @@ input[type="radio"] {
   padding: 10px 0px;
   width: 100%;
   min-width: 100px;
+
+  cursor: pointer;
 }
 .modal__btn2:hover {
   background: #572605;
@@ -806,10 +816,91 @@ input {
   padding-bottom: 10px;
   font-size: 18px;
   width: 100%;
+
+  cursor: pointer;
 }
 .auth__btn--book2:hover {
   background: #572605;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+.wholeScheme{
+  margin-bottom: 20px;
+}
+
+.scheme{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.scheme>svg {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.scheme-item {
+  /* position: absolute; */
+  cursor: pointer;
+}
+
+.scheme-name {
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+  line-height: 13px;
+}
+.scheme-name2 {
+  font-size: 50px;
+  text-align: center;
+  line-height: 13px;
+}
+
+.scheme-popup {
+  display: none;
+  border: 1px solid #777;
+  padding: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  font-size: 14px;
+  line-height: 14px;
+  background: #fff;
+  /* z-index: 9999; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  text-align: left;
+  cursor: pointer;
+}
+.scheme-tableNumber{
+  position: absolute;
+  font-size: 18px;
+  color: #313131;
+
+  cursor: default;
+}
+
+.defaultStol{
+  fill: #f9a400;
+  cursor: pointer;
+}
+
+
+.scheme rect.defaultStol:hover, #hover {
+  fill: #ffb829;
+  cursor: pointer;
+}
+
+.scheme rect.defaultStol.active, #active {
+  fill: #c4552d !important;
+  cursor: pointer;
+}
+
+
 
 
 
@@ -836,10 +927,6 @@ input {
     width: 100%;
   }
 
-  .radiostol{
-    -ms-grid-columns: 0fr 0px 0fr;
-    grid-template-columns: repeat(2, 0fr);
-  }
   .radiotime{
     -ms-grid-columns: 0fr 0px 0fr 0px 0fr;
     grid-template-columns: repeat(3, 0fr);

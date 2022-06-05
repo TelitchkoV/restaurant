@@ -21,6 +21,7 @@
   <!-- Скрипты -->
   <script src="https://unpkg.com/imask" defer></script>
   <script type="text/javascript" defer src="js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
   <!-- Теги -->
   <!-- Описание -->
@@ -75,13 +76,235 @@
             <img src="img/invoice-bill-svgrepo-com.svg" alt="">
             <p>Забронировать столик</p>
           </button>
-          <div class="_modal" data-modal="modal-1">
+          <div id="modalMain" class="_modal" data-modal="modal-1">
             <div class="modal-bg">
               <div class="modal-body">
                 <div class="modal-content modal-callback">
-                  <div>
-                    <img class="img" src="img/map.png" alt="">
+
+                  <div class="wholeScheme" >
+
+                    <div class="scheme">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -0.5 1056 376">
+                        <g xmlns="http://www.w3.org/2000/svg">
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-136"
+                            d="M 491.54 290.62 L 494.45 314.46 C 495 317.97 493.48 321.47 490.57 323.4 C 480.61 325 470.46 325 460.5 323.4 C 457.59 321.47 456.06 317.97 456.62 314.46 L 459.53 290.62 C 460.09 287.98 462.86 285.95 466.32 285.65 L 484.75 285.65 C 488.2 285.95 490.98 287.98 491.54 290.62 Z M 465.52 285.65 L 460.54 279.36 M 471.06 285.65 L 469.4 278.46 M 477.71 285.65 L 479.92 278.46 M 483.24 285.65 L 488.78 279.36 M 490.44 279.69 C 480.19 278.06 469.69 278.06 459.43 279.69 L 455 275.72 C 468.12 273.01 481.76 273.01 494.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(270,475,299)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-137"
+                            d="M 557.54 290.62 L 560.45 314.46 C 561 317.97 559.48 321.47 556.57 323.4 C 546.61 325 536.46 325 526.5 323.4 C 523.59 321.47 522.06 317.97 522.62 314.46 L 525.53 290.62 C 526.09 287.98 528.86 285.95 532.32 285.65 L 550.75 285.65 C 554.2 285.95 556.98 287.98 557.54 290.62 Z M 531.52 285.65 L 526.54 279.36 M 537.06 285.65 L 535.4 278.46 M 543.71 285.65 L 545.92 278.46 M 549.24 285.65 L 554.78 279.36 M 556.44 279.69 C 546.19 278.06 535.69 278.06 525.43 279.69 L 521 275.72 C 534.12 273.01 547.76 273.01 560.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,541,299)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-145"
+                            d="M 439.54 69.62 L 442.45 93.46 C 443 96.97 441.48 100.47 438.57 102.4 C 428.61 104 418.46 104 408.5 102.4 C 405.59 100.47 404.06 96.97 404.62 93.46 L 407.53 69.62 C 408.09 66.98 410.86 64.95 414.32 64.65 L 432.75 64.65 C 436.2 64.95 438.98 66.98 439.54 69.62 Z M 413.52 64.65 L 408.54 58.36 M 419.06 64.65 L 417.4 57.46 M 425.71 64.65 L 427.92 57.46 M 431.24 64.65 L 436.78 58.36 M 438.44 58.69 C 428.19 57.06 417.69 57.06 407.43 58.69 L 403 54.72 C 416.12 52.01 429.76 52.01 442.87 54.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,423,78)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="247.33" y="89.25" width="121.33" height="6.25"
+                            fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="238" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="252" y="83" width="112" height="9.38" rx="1.88"
+                            ry="1.88" fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="252" y="92.38" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="308" y="92.38" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-149" x="364" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,308,108)"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-150"
+                            d="M 439.54 129.62 L 442.45 153.46 C 443 156.96 441.48 160.47 438.57 162.4 C 428.61 164 418.46 164 408.5 162.4 C 405.59 160.47 404.06 156.96 404.62 153.46 L 407.53 129.62 C 408.09 126.98 410.86 124.95 414.32 124.65 L 432.75 124.65 C 436.2 124.95 438.98 126.98 439.54 129.62 Z M 413.52 124.65 L 408.54 118.35 M 419.06 124.65 L 417.4 117.46 M 425.71 124.65 L 427.92 117.46 M 431.24 124.65 L 436.78 118.35 M 438.44 118.69 C 428.19 117.06 417.69 117.06 407.43 118.69 L 403 114.72 C 416.12 112 429.76 112 442.87 114.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,423,138)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol6" x="468" y="259" width="80" height="80" fill="#ffffff" stroke="#000000"
+                            pointer-events="all" />
+                          <rect class="defaultStol" id="stol2" x="300" y="58" width="160" height="100" fill="#ffffff" stroke="#000000"
+                            transform="rotate(-90,380,108)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-163"
+                            d="M 708.54 69.62 L 711.45 93.46 C 712.01 96.97 710.48 100.47 707.57 102.4 C 697.61 104 687.46 104 677.5 102.4 C 674.59 100.47 673.07 96.97 673.62 93.46 L 676.53 69.62 C 677.09 66.98 679.87 64.95 683.32 64.65 L 701.75 64.65 C 705.21 64.95 707.98 66.98 708.54 69.62 Z M 682.53 64.65 L 677.54 58.36 M 688.07 64.65 L 686.41 57.46 M 694.71 64.65 L 696.92 57.46 M 700.25 64.65 L 705.79 58.36 M 707.44 58.69 C 697.19 57.06 686.69 57.06 676.44 58.69 L 672 54.72 C 685.12 52.01 698.76 52.01 711.88 54.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,692,78)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="516.34" y="89.25" width="121.33" height="6.25"
+                            fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="507" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="521" y="83" width="112" height="9.38" rx="1.88"
+                            ry="1.88" fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="521" y="92.38" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="577" y="92.38" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-164" x="633" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,577,108)"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-165"
+                            d="M 708.54 129.62 L 711.45 153.46 C 712.01 156.96 710.48 160.47 707.57 162.4 C 697.61 164 687.46 164 677.5 162.4 C 674.59 160.47 673.07 156.96 673.62 153.46 L 676.53 129.62 C 677.09 126.98 679.87 124.95 683.32 124.65 L 701.75 124.65 C 705.21 124.95 707.98 126.98 708.54 129.62 Z M 682.53 124.65 L 677.54 118.35 M 688.07 124.65 L 686.41 117.46 M 694.71 124.65 L 696.92 117.46 M 700.25 124.65 L 705.79 118.35 M 707.44 118.69 C 697.19 117.06 686.69 117.06 676.44 118.69 L 672 114.72 C 685.12 112 698.76 112 711.88 114.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,692,138)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol3" x="569" y="58" width="160" height="100" fill="#ffffff" stroke="#000000"
+                            transform="rotate(-90,649,108)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-168"
+                            d="M 791.53 290.62 L 794.44 314.46 C 795 317.97 793.48 321.47 790.56 323.4 C 780.6 325 770.46 325 760.5 323.4 C 757.58 321.47 756.06 317.97 756.62 314.46 L 759.53 290.62 C 760.08 287.98 762.86 285.95 766.32 285.65 L 784.74 285.65 C 788.2 285.95 790.98 287.98 791.53 290.62 Z M 765.52 285.65 L 760.53 279.36 M 771.06 285.65 L 769.4 278.46 M 777.7 285.65 L 779.91 278.46 M 783.24 285.65 L 788.78 279.36 M 790.44 279.69 C 780.18 278.06 769.69 278.06 759.43 279.69 L 755 275.72 C 768.12 273.01 781.75 273.01 794.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(270,775,299)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-169"
+                            d="M 857.53 290.62 L 860.44 314.46 C 861 317.97 859.48 321.47 856.56 323.4 C 846.6 325 836.46 325 826.5 323.4 C 823.58 321.47 822.06 317.97 822.62 314.46 L 825.53 290.62 C 826.08 287.98 828.86 285.95 832.32 285.65 L 850.74 285.65 C 854.2 285.95 856.98 287.98 857.53 290.62 Z M 831.52 285.65 L 826.53 279.36 M 837.06 285.65 L 835.4 278.46 M 843.7 285.65 L 845.91 278.46 M 849.24 285.65 L 854.78 279.36 M 856.44 279.69 C 846.18 278.06 835.69 278.06 825.43 279.69 L 821 275.72 C 834.12 273.01 847.75 273.01 860.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,841,299)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol7" x="768" y="259" width="80" height="80" fill="#ffffff" stroke="#000000"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-171"
+                            d="M 1016.53 69.62 L 1019.44 93.46 C 1020 96.96 1018.47 100.47 1015.56 102.4 C 1005.6 104 995.45 104 985.49 102.4 C 982.58 100.47 981.06 96.96 981.61 93.46 L 984.52 69.62 C 985.08 66.98 987.86 64.95 991.31 64.65 L 1009.74 64.65 C 1013.2 64.95 1015.97 66.98 1016.53 69.62 Z M 990.52 64.65 L 985.53 58.35 M 996.06 64.65 L 994.4 57.46 M 1002.7 64.65 L 1004.91 57.46 M 1008.24 64.65 L 1013.78 58.35 M 1015.43 58.69 C 1005.18 57.06 994.68 57.06 984.43 58.69 L 979.99 54.72 C 993.11 52 1006.75 52 1019.87 54.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,999.99,78)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="824.33" y="89.25" width="121.33" height="6.25"
+                            fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="814.99" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="828.99" y="83" width="112" height="9.38" rx="1.88"
+                            ry="1.88" fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="828.99" y="92.37" width="56" height="40.63"
+                            rx="2.03" ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="884.99" y="92.37" width="56" height="40.63"
+                            rx="2.03" ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-172" x="940.99" y="83" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,884.99,108)"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-173"
+                            d="M 1016.53 129.61 L 1019.44 153.45 C 1020 156.96 1018.47 160.47 1015.56 162.39 C 1005.6 163.99 995.45 163.99 985.49 162.39 C 982.58 160.47 981.06 156.96 981.61 153.45 L 984.52 129.61 C 985.08 126.98 987.86 124.95 991.31 124.65 L 1009.74 124.65 C 1013.2 124.95 1015.97 126.98 1016.53 129.61 Z M 990.52 124.65 L 985.53 118.35 M 996.06 124.65 L 994.4 117.46 M 1002.7 124.65 L 1004.91 117.46 M 1008.24 124.65 L 1013.78 118.35 M 1015.43 118.69 C 1005.18 117.05 994.68 117.05 984.43 118.69 L 979.99 114.72 C 993.11 112 1006.75 112 1019.87 114.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,999.99,137.99)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol4" x="876.99" y="58" width="160" height="100" fill="#ffffff" stroke="#000000"
+                            transform="rotate(-90,956.99,108)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-175"
+                            d="M 213.53 290.62 L 216.44 314.46 C 217 317.96 215.48 321.47 212.56 323.4 C 202.6 325 192.46 325 182.5 323.4 C 179.58 321.47 178.06 317.96 178.62 314.46 L 181.53 290.62 C 182.08 287.98 184.86 285.95 188.32 285.65 L 206.74 285.65 C 210.2 285.95 212.98 287.98 213.53 290.62 Z M 187.52 285.65 L 182.53 279.35 M 193.06 285.65 L 191.4 278.46 M 199.7 285.65 L 201.91 278.46 M 205.24 285.65 L 210.78 279.35 M 212.44 279.69 C 202.18 278.06 191.69 278.06 181.43 279.69 L 177 275.72 C 190.12 273 203.75 273 216.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(270,197,299)" pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-176"
+                            d="M 279.53 290.62 L 282.44 314.46 C 283 317.96 281.48 321.47 278.56 323.4 C 268.6 325 258.46 325 248.5 323.4 C 245.58 321.47 244.06 317.96 244.62 314.46 L 247.53 290.62 C 248.08 287.98 250.86 285.95 254.32 285.65 L 272.74 285.65 C 276.2 285.95 278.98 287.98 279.53 290.62 Z M 253.52 285.65 L 248.53 279.35 M 259.06 285.65 L 257.4 278.46 M 265.7 285.65 L 267.91 278.46 M 271.24 285.65 L 276.78 279.35 M 278.44 279.69 C 268.18 278.06 257.69 278.06 247.43 279.69 L 243 275.72 C 256.12 273 269.75 273 282.87 275.72 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,263,299)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol5" x="190" y="259" width="80" height="80" fill="#ffffff" stroke="#000000"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-178"
+                            d="M 161.54 69.61 L 164.45 93.45 C 165 96.96 163.48 100.46 160.57 102.39 C 150.61 103.99 140.46 103.99 130.5 102.39 C 127.59 100.46 126.06 96.96 126.62 93.45 L 129.53 69.61 C 130.09 66.97 132.86 64.94 136.32 64.64 L 154.75 64.64 C 158.2 64.94 160.98 66.97 161.54 69.61 Z M 135.52 64.64 L 130.54 58.35 M 141.06 64.64 L 139.4 57.45 M 147.71 64.64 L 149.92 57.45 M 153.24 64.64 L 158.78 58.35 M 160.44 58.68 C 150.19 57.05 139.69 57.05 129.43 58.68 L 125 54.71 C 138.12 52 151.76 52 164.87 54.71 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,145,77.99)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="-30.67" y="89.24" width="121.33" height="6.25"
+                            fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)" pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="-40" y="82.99" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="-26" y="82.99" width="112" height="9.38" rx="1.88"
+                            ry="1.88" fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="-26" y="92.37" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="30" y="92.37" width="56" height="40.63" rx="2.03"
+                            ry="2.03" fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)"
+                            pointer-events="all" />
+                          <rect cell-id="zYuxRKl8LTsUcHkBkmkV-179" x="86" y="82.99" width="14" height="50" rx="2.8"
+                            ry="2.8" fill="#ffffff" stroke="#000000" transform="rotate(-90,30,107.99)"
+                            pointer-events="all" />
+                          <path cell-id="zYuxRKl8LTsUcHkBkmkV-180"
+                            d="M 161.54 129.61 L 164.45 153.45 C 165 156.95 163.48 160.46 160.57 162.39 C 150.61 163.99 140.46 163.99 130.5 162.39 C 127.59 160.46 126.06 156.95 126.62 153.45 L 129.53 129.61 C 130.09 126.97 132.86 124.94 136.32 124.64 L 154.75 124.64 C 158.2 124.94 160.98 126.97 161.54 129.61 Z M 135.52 124.64 L 130.54 118.34 M 141.06 124.64 L 139.4 117.45 M 147.71 124.64 L 149.92 117.45 M 153.24 124.64 L 158.78 118.34 M 160.44 118.68 C 150.19 117.05 139.69 117.05 129.43 118.68 L 125 114.71 C 138.12 111.99 151.76 111.99 164.87 114.71 Z"
+                            fill="#ffffff" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
+                            transform="rotate(90,145,137.99)" pointer-events="all" />
+                          <rect class="defaultStol" id="stol1" x="22" y="57.99" width="160" height="100" fill="#ffffff"
+                            stroke="#000000" transform="rotate(-90,102,107.99)" pointer-events="all" />
+                          <!-- <text class="scheme-name2" x="40" y="57.99">1</text> -->
+                          </g>
+                      </svg>
+                      <div id="popup1" class="scheme-popup">
+                        Мест: 4-6<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup2" class="scheme-popup">
+                        Мест: 4-6<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup3" class="scheme-popup">
+                        Мест: 4-6<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup4" class="scheme-popup">
+                        Мест: 4-6<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup5" class="scheme-popup">
+                        Мест: 1-2<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup6" class="scheme-popup">
+                        Мест: 1-2<br>
+                        Бронь: да
+                      </div>
+                      <div id="popup7" class="scheme-popup">
+                        Мест: 1-2<br>
+                        Бронь: да
+                      </div>
+                    </div>
+
+                    <!-- <div class="schemeItems">
+                      <div class="scheme-item" data-id="stol1">
+                        <div class="scheme-name">1</div>
+                        <div id="popup1" class="scheme-popup">
+                          Кол-во человек: 4-6<br>
+                          Бронь свободна
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol2">
+                        <div class="scheme-name">2</div>
+                        <div id="popup2" class="scheme-popup">
+                          2
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol3">
+                        <div class="scheme-name">3</div>
+                        <div id="popup3" class="scheme-popup">
+                          3
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol4">
+                        <div class="scheme-name">4</div>
+                        <div id="popup4" class="scheme-popup">
+                          4
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol5" >
+                        <div class="scheme-name">5</div>
+                        <div id="popup5" class="scheme-popup">
+                          5
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol6">
+                        <div class="scheme-name">6</div>
+                        <div id="popup6" class="scheme-popup">
+                          6
+                        </div>
+                      </div>
+                      <div class="scheme-item" data-id="stol7">
+                        <div class="scheme-name">7</div>
+                        <div id="popup7" class="scheme-popup">
+                          7
+                        </div>
+                      </div>
+                    </div> -->
+
                   </div>
+
                   <div class="middate">
                     <div class="datebronH">
                       <label for="date">Дата брони</label>
@@ -151,10 +374,12 @@
                       <label class="time" for="time_19_3">19:30</label>
                     </div>
                   </div>
+
                   <div>
                     <textarea class="auth__value--comment" type="comment" cols="30" rows="3"
                       placeholder="Пожелания к Бронированию"></textarea>
                   </div>
+
                   <label for="">Нажимая кнопку "Продолжить" вы принимаете условия пользовательского соглашения и
                     политики конфиденциальности</label>
 
@@ -163,6 +388,7 @@
                       Продолжить
                     </button>
                   </div>
+
                   <div class="_modal2" data-modal="modal-2">
                     <div class="modal-bg2">
                       <div class="modal-body2">
@@ -186,6 +412,7 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
