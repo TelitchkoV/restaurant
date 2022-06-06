@@ -39,13 +39,6 @@ function Header__Tabs(scroll){
     tabsList[target].classList = "header__pageTab active";
   }
 
-  // DEBUG
-  // console.log(window.innerHeight);
-  // console.log(window.pageYOffset);
-  // console.log(scroll);
-  // console.log(anchor3.bottom + scroll - window.innerHeight);
-  // console.log("--------------");
-
   if (scroll > anchor3.bottom + scroll - window.innerHeight - headerHeight) {
     Header__TabsUpdate(3);
   }
@@ -271,10 +264,10 @@ function createTableMenu(){
     // Положение модального окна относительно основного
     var ModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
 
-    tableNumber.style.top = tempRect.top + document.getElementById("modalMain").scrollTop
+    tableNumber.style.top = tempRect.top
     - ModalOffset.top - tableNumber.getBoundingClientRect().height
     +'px';
-    tableNumber.style.left = tempRect.left + document.getElementById("modalMain").scrollLeft
+    tableNumber.style.left = tempRect.left
     - ModalOffset.left + (tempRect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
     +'px';
 
@@ -289,11 +282,11 @@ function createTableMenu(){
 
       var rect = tables[i].getBoundingClientRect();
 
-      tempPopup.style.top = rect.top + document.getElementById("modalMain").scrollTop
+      tempPopup.style.top = rect.top
         + (rect.height) + 5
         - tempModalOffset.top
       +'px';
-      tempPopup.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+      tempPopup.style.left = rect.left
         + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
         - tempModalOffset.left
       +'px';
@@ -338,19 +331,19 @@ function createTableMenu(){
       var tableNumber = document.getElementById("tableNumber" + tempID);
       var tempPopup = document.getElementById('popup' + tempID);
 
-      tempPopup.style.top = rect.top + document.getElementById("modalMain").scrollTop
-      + (rect.height) + 5
+      tempPopup.style.top = rect.top
+      + (rect.height) + 5 - tempModalOffset.scrollY
       - tempModalOffset.top
       +'px';
-      tempPopup.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+      tempPopup.style.left = rect.left
       + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
       - tempModalOffset.left
       +'px';
 
-      tableNumber.style.top = rect.top + document.getElementById("modalMain").scrollTop
+      tableNumber.style.top = rect.top
       - tempModalOffset.top - tableNumber.getBoundingClientRect().height
       +'px';
-      tableNumber.style.left = rect.left + document.getElementById("modalMain").scrollLeft
+      tableNumber.style.left = rect.left
       - tempModalOffset.left + (rect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
       +'px';
     }
