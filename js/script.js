@@ -105,7 +105,7 @@ function openModal(elem) {
 }
 
 function closeModal(e) {
-	if (e.target.classList.contains('modal-bg')) {
+	if (e.target.classList.contains('modal-bg') || e.target.classList.contains('_modal')) {
 		e.target.closest('._modal').classList.remove('_active');
 		body.classList.remove('_locked')
 	}
@@ -164,7 +164,7 @@ function openModal2(elem) {
 }
 
 function closeModal2(e) {
-	if (e.target.classList.contains('modal-bg2')) {
+	if (e.target.classList.contains('modal-bg2')  || e.target.classList.contains('_modal2')) {
 		e.target.closest('._modal2').classList.remove('_active');
 		body2.classList.remove('_locked')
 	}
