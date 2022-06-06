@@ -99,6 +99,9 @@ const body = document.body;
 function openModal(elem) {
 	elem.classList.add('_active');
 	body.classList.add('_locked')
+
+  // Важный фикс !!!!
+  updateTablesScheme();
 }
 
 function closeModal(e) {
@@ -257,8 +260,8 @@ function createTableMenu(){
     tableNumber.innerText = tables[i].id.replace("stol", "");
     tableNumber.classList = "scheme-tableNumber";
     tableNumber.id = "tableNumber" + tables[i].id.replace("stol", "");
-
     document.querySelector(".scheme").appendChild(tableNumber);
+
     // Вставить номер стола
     var tempRect = tables[i].getBoundingClientRect();
     // Положение модального окна относительно основного
@@ -323,29 +326,33 @@ function createTableMenu(){
 
   // Реакция на смену размера окна
   window.addEventListener('resize', (e) => {
-    var tempModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
-
-    for (let i = 0; i < tables.length; i++){
-      var rect = tables[i].getBoundingClientRect();
-      var tempID = tables[i].id.replace("stol", "");
-      var tableNumber = document.getElementById("tableNumber" + tempID);
-      var tempPopup = document.getElementById('popup' + tempID);
-
-      tempPopup.style.top = rect.top
-      + (rect.height) + 5 - tempModalOffset.scrollY
-      - tempModalOffset.top
-      +'px';
-      tempPopup.style.left = rect.left
-      + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
-      - tempModalOffset.left
-      +'px';
-
-      tableNumber.style.top = rect.top
-      - tempModalOffset.top - tableNumber.getBoundingClientRect().height
-      +'px';
-      tableNumber.style.left = rect.left
-      - tempModalOffset.left + (rect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
-      +'px';
-    }
+    updateTablesScheme();
   });
+}
+
+function updateTablesScheme(){
+  var tempModalOffset = document.querySelector(".modal-body").getBoundingClientRect();
+
+  for (let i = 0; i < tables.length; i++){
+    var rect = tables[i].getBoundingClientRect();
+    var tempID = tables[i].id.replace("stol", "");
+    var tableNumber = document.getElementById("tableNumber" + tempID);
+    var tempPopup = document.getElementById('popup' + tempID);
+
+    tempPopup.style.top = rect.top
+    + (rect.height) + 5
+    - tempModalOffset.top
+    +'px';
+    tempPopup.style.left = rect.left
+    + (rect.width / 2) - (tempPopup.getBoundingClientRect().width / 2)
+    - tempModalOffset.left
+    +'px';
+
+    tableNumber.style.top = rect.top
+    - tempModalOffset.top - tableNumber.getBoundingClientRect().height
+    +'px';
+    tableNumber.style.left = rect.left
+    - tempModalOffset.left + (rect.width / 2) - (tableNumber.getBoundingClientRect().width / 2)
+    +'px';
+  }
 }
