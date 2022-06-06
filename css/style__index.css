@@ -871,7 +871,7 @@ input {
   font-size: 14px;
   line-height: 14px;
   background: #fff;
-  /* z-index: 9999; */
+  z-index: 1;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
   text-align: left;
   cursor: pointer;
@@ -927,23 +927,6 @@ input {
     width: 100%;
   }
 
-  .radiotime{
-    -ms-grid-columns: 0fr 0px 0fr 0px 0fr;
-    grid-template-columns: repeat(3, 0fr);
-  }
-
-  .middate{
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .datebronH{
-    width: 100%;
-  }
-  .kolvochel{
-    margin-top: 10px;
-    width: 100%;
-    text-align: left;
-  }
 
   .index__specialDishes__list,
   .index__services__list{
@@ -1003,6 +986,25 @@ input {
   .index__specialDishes__list .desc{
     padding: 5px 10px;
   }
+
+  .radiotime{
+    -ms-grid-columns: 0fr 0px 0fr 0px 0fr;
+    grid-template-columns: repeat(4, 0fr);
+  }
+
+  .middate{
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .datebronH{
+    width: 100%;
+  }
+  .kolvochel{
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
 }
 @media (max-width: 320px){
   .index__services__list > div{
@@ -1059,5 +1061,10 @@ input {
   }
   .index__storyHolder .desc{
     font-size: 16px !important;
+  }
+
+  .radiotime{
+    -ms-grid-columns: 0fr 0px 0fr 0px 0fr;
+    grid-template-columns: repeat(3, 0fr);
   }
 }
